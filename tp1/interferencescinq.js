@@ -79,7 +79,7 @@ function setup() {
   obra = new Obra();
   obra.iniciar();
   
-  classifier.classify(gotResult); 
+  //classifier.classify(gotResult); 
 }
 
 
@@ -235,6 +235,8 @@ async function iniciarAudio() {
       marcaFinSonido = millis();
       // Pitch detection se inicializa cuando el stream del micrófono ya existe.
       startPitch();
+
+      classifier.classify(gotResult);
     }
     ,
       (error) => {
